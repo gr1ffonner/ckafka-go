@@ -4,6 +4,7 @@ import (
 	"ckafkago/internal/config"
 	"context"
 	"encoding/json"
+	"fmt"
 	"log/slog"
 	"strings"
 
@@ -41,7 +42,7 @@ func (h *TestTopicHandler) Handle(ctx context.Context, groupID, topic string, me
 		if err != nil {
 			errs = append(errs, err)
 		}
-		h.logger.Info("Decoded Message:\nID: %s\nContent: %s\n", decodedMsg.MessageID, decodedMsg.Message)
+		h.logger.Info(fmt.Sprintf("Decoded Message:ID: %s Content: %s", decodedMsg.MessageID, decodedMsg.Message))
 
 	}
 
