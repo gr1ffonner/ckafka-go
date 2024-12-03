@@ -1,0 +1,6 @@
+/logs
+/postgres-data
+/var
+/.run
+
+*override*yaml
